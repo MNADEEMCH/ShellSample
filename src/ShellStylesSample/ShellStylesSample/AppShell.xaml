@@ -2,9 +2,10 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:app="clr-namespace:ShellStylesSample"
+       xmlns:pages="clr-namespace:ShellStylesSample.Pages"
        xmlns:common="clr-namespace:Common"
-       x:Class="ShellStylesSample.AppShell"
-       >
+       xmlns:badge="clr-namespace:Xam.Shell.Badge;assembly=Xam.Shell.Badge"
+       x:Class="ShellStylesSample.AppShell" x:Name="AppShellPage" Navigating="AppShell_Navigating">
 
     <Shell.Resources>
         <FontImageSource
@@ -12,27 +13,83 @@
             FontFamily="FontAwesome"
             Glyph="{x:Static common:IconFont.Backward}"
             Size="18"
-            Color="#1d1d1d"/>
+            Color="#336699"/>
         <FontImageSource
-            x:Key="IconSignout"
+            x:Key="IconMessage"
             FontFamily="FontAwesome"
-            Glyph="{x:Static common:IconFont.SignOutAlt}"
+            Glyph="{x:Static common:IconFont.Sms}"
             Size="18"
-            Color="#1d1d1d"/>
+            Color="#336699"/>
         <FontImageSource
-            x:Key="IconInfo"
+            x:Key="IconCustomer"
             FontFamily="FontAwesome"
-            Glyph="{x:Static common:IconFont.Info}"
+            Glyph="{x:Static common:IconFont.Users}"
             Size="18"
-            Color="#1d1d1d"/>
+            Color="#336699"/>
         <FontImageSource
             x:Key="IconHome"
             FontFamily="FontAwesome"
             Glyph="{x:Static common:IconFont.Home}"
             Size="18"
-            Color="#1d1d1d"/>
+            Color="#336699"/>
+        <FontImageSource
+            x:Key="IconSchedule"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static common:IconFont.Calendar}"
+            Size="18"
+            Color="#336699"/>
+        <FontImageSource
+            x:Key="IconMyFunds"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static common:IconFont.DollarSign}"
+            Size="18"
+            Color="#336699"/>
+        <FontImageSource
+            x:Key="IconTimeCard"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static common:IconFont.Clock}"
+            Size="18"
+            Color="#336699"/>
+        <FontImageSource
+            x:Key="IconMore"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static common:IconFont.DotCircle}"
+            Size="18"
+            Color="#336699"/>
+        <FontImageSource
+            x:Key="IconAddNEW"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static common:IconFont.PlusCircle}"
+            Size="18"
+            Color="Green"/>
     </Shell.Resources>
 
+    <FlyoutItem Title="Dashboard" x:Name="tabbar" FlyoutIcon="{StaticResource IconHome}">
+        <Tab Title="Dashboard" Icon="{StaticResource IconHome}">
+            <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate pages:DashboardPage}"/>
+        </Tab>
+        <Tab Title="Schedule" Icon="{StaticResource IconSchedule}">
+            <ShellContent Title="Schedule" ContentTemplate="{DataTemplate pages:SchedulePage}"/>
+        </Tab>
+        <Tab Title="Add New" Route="addnew" Icon="{StaticResource IconAddNEW}">
+            <ContentPage Title="Add New"/>
+        </Tab>
+        <Tab Title="Customers" Icon="{StaticResource IconBack}">
+            <ShellContent Title="Customers" ContentTemplate="{DataTemplate pages:CustomersListPage}"/>
+        </Tab>
+        <Tab Title="Messages" Icon="{StaticResource IconMessage}" badge:Badge.BackgroundColor="Green" badge:Badge.Text="9" badge:Badge.TextColor="White">
+            <ShellContent Title="Messages" ContentTemplate="{DataTemplate pages:MessagesPage}"/>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="My Funds" Icon="{StaticResource IconMyFunds}">
+        <ShellContent Title="My Funds" ContentTemplate="{DataTemplate pages:MyFundsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Time Card" Icon="{StaticResource IconTimeCard}">
+        <ShellContent Title="Time Card" ContentTemplate="{DataTemplate pages:MyFundsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="More" Icon="{StaticResource IconMore}">
+        <ShellContent Title="More" ContentTemplate="{DataTemplate pages:MorePage}"/>
+    </FlyoutItem>
     <!--<TabBar>
         <Tab Title="Main Page" Icon="{StaticResource IconHome}">
             <ShellContent Title="Main Page" ContentTemplate="{DataTemplate app:MainPage}"/>
@@ -48,20 +105,6 @@
             <ShellContent Title="Main Page" ContentTemplate="{DataTemplate app:MainPage}"/>
         </Tab>
     </TabBar>-->
-
-    <FlyoutItem Title="Main Page" Icon="{StaticResource IconHome}">
-        <ShellContent Title="Main Page" ContentTemplate="{DataTemplate app:MainPage}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Info Page" Icon="{StaticResource IconInfo}"
-            >
-        <ShellContent Title="Main Page" ContentTemplate="{DataTemplate app:MainPage}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Back Page" Icon="{StaticResource IconBack}">
-        <ShellContent Title="Main Page" ContentTemplate="{DataTemplate app:MainPage}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Sign Out Page" Icon="{StaticResource IconSignout}">
-        <ShellContent Title="Main Page" ContentTemplate="{DataTemplate app:MainPage}"/>
-    </FlyoutItem>
 
 
 </Shell>

@@ -10,7 +10,7 @@ namespace ShellStylesSample
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new LandingPage();
         }
 
         protected override void OnStart()

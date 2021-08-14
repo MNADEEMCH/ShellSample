@@ -21,6 +21,7 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
+        <Button Text="go to page2" Clicked="Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>

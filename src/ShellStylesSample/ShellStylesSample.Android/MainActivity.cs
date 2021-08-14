@@ -5,6 +5,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Xamarin.Forms.Platform.Android;
+using Xam.Shell.Badge.Droid;
 
 namespace ShellStylesSample.Droid
 {
@@ -16,7 +17,8 @@ namespace ShellStylesSample.Droid
             base.OnCreate(savedInstanceState);
 
             this.SetStatusBarColor(Xamarin.Forms.Color.FromHex("#FF3300").ToAndroid());
-
+            BottomBar.Init();
+            Rg.Plugins.Popup.Popup.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

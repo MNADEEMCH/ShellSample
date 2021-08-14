@@ -9,31 +9,26 @@
             <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
             <Setter Property="Shell.ForegroundColor" Value="White" />
             <Setter Property="Shell.TitleColor" Value="White" />
-            <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-            <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
             <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
-            <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-            <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-            <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            <Setter Property="Shell.TabBarForegroundColor" Value="#336699"/>
+            <Setter Property="Shell.TabBarTitleColor" Value="#336699"/>
         </Style>
+
+
         <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
         <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
 
-        <Style TargetType="Label"
-            Class="FlyoutItemLabelStyle">
-            <Setter Property="TextColor"
-            Value="Black" />
-            <Setter Property="HeightRequest"
-            Value="100" />
+        <!--<Style TargetType="Label"  Class="FlyoutItemLabelStyle">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="HeightRequest" Value="100" />
         </Style>
 
-        <Style TargetType="Image"
-       Class="FlyoutItemImageStyle">
-            <Setter Property="Aspect"
-            Value="AspectFit" />
-        </Style>
+        <Style TargetType="Image" Class="FlyoutItemImageStyle">
+            <Setter Property="Aspect" Value="AspectFit" />
+            <Setter Property="WidthRequest" Value="120" />
+        </Style>-->
 
-        <Style TargetType="Layout"
+        <!--<Style TargetType="Layout"
            Class="FlyoutItemLayoutStyle"
            ApplyToDerivedTypes="True">
             <Setter
@@ -68,6 +63,6 @@
                     </VisualStateGroup>
                 </VisualStateGroupList>
             </Setter>
-        </Style>
+        </Style>-->
     </Application.Resources>
 </Application>
